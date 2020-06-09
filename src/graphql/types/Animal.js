@@ -17,7 +17,7 @@ export default `
         name: String!
         kind: String!
         sex: String!
-        age: Float!
+        age: String!
         city: String!
         author: String!
         phone: String!
@@ -30,9 +30,9 @@ export default `
     }
 
     type Mutation {
-        addAnimal(name: String!, kind: String!, sex: String!, age: Float!, city: String!, author: String!,  phone: String!, info: String!): Animal
+        addAnimal(name: String!, kind: String!, sex: String!, age: String!, city: String!, author: String!,  phone: String!, info: String!): Animal
         deleteAnimal(_id: String!): Animal
-        editAnimal(_id: String!, name: String!, kind: String!, sex: String!, age: Float!, city: String!, author: String!,  phone: String!, info: String!): Animal
+        editAnimal(_id: String!, name: String!, kind: String!, sex: String!, age: String!, city: String!, author: String!,  phone: String!, info: String!): Animal
     }
 
 `
