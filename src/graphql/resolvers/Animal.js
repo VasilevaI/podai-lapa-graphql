@@ -19,8 +19,8 @@ export default {
         }
     },
     Mutation: {
-        addAnimal: (root, {name, kind, sex, age, city, author, phone, info}) => {
-            const newAnimal = new Animal({name, kind, sex, age, city, author, phone, info});
+        addAnimal: (root, {name, kind, imageUrl,sex, age, city, author, phone, info}) => {
+            const newAnimal = new Animal({name, kind, imageUrl,sex, age, city, author, phone, info});
             return new Promise((resolve, reject) => {
                 newAnimal.save((error, response) => {
                     error ? reject(error) : resolve(response);
@@ -34,9 +34,9 @@ export default {
                 })
             })
         },
-        editAnimal: (root, {_id, name, description, imageUrl, price}) => {
+        editAnimal: (root, {_id, name, kind,imageUrl, sex, age, city, author, phone, info}) => {
             return new Promise((resolve, reject) => {
-                Animal.findByIdAndUpdate({_id}, {$set: {name, kind, sex, age, city, author, phone, info}}, {new: true}).exec((error, response) => {
+                Animal.findByIdAndUpdate({_id}, {$set: {name, kind,imageUrl, sex, age, city, author, phone, info}}, {new: true}).exec((error, response) => {
                     error ? reject(error) : resolve(response);
                 })
             })

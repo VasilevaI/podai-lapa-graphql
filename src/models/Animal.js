@@ -3,11 +3,16 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const AnimalSchema = new Schema({
+  
     name: {
         type: String,
         required: true
     },
     kind: {
+        type: String,
+        required: true
+    },  
+    imageUrl: {
         type: String,
         required: true
     },
